@@ -120,7 +120,7 @@ function HoverGradientNavBar(): React.JSX.Element {
   const menuItems = [...publicMenuItems, ...authMenuItems];
 
   return (
-    <div className="fixed top-0 left-0 w-full md:top-4 md:left-1/2 md:-translate-x-1/2 z-50">
+    <div className="fixed top-4 left-0 w-full md:top-6 md:left-1/2 md:-translate-x-1/2 z-50">
       <motion.nav
         className="w-full md:w-fit mx-auto px-2 md:px-4 py-2 md:py-3 rounded-none md:rounded-3xl 
         bg-background/70 backdrop-blur-lg 
