@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import HoverGradientNavBar from '../components/ui/hover-gradient-nav-bar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
+import HowItWorks from '../components/HowItWorks';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -198,37 +199,8 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 bg-secondary/30 backdrop-blur-sm">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-              
-              <div className="space-y-6">
-                <div className="glass-card p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-2">How can I get started with StudentAI?</h3>
-                  <p className="text-white/70">
-                    Simply sign up for an account on our platform and you'll receive complimentary credits to try out our AI tools.
-                  </p>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-2">Do you offer student discounts?</h3>
-                  <p className="text-white/70">
-                    Yes! We offer special pricing for verified students. Contact us with your academic email for more information.
-                  </p>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-2">Can I request a custom AI tool for my institution?</h3>
-                  <p className="text-white/70">
-                    Absolutely. We work with educational institutions to develop custom AI solutions. Reach out to our partnerships team to discuss your requirements.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* How It Works Section */}
+        <HowItWorks />
       </main>
       <Footer />
     </div>
