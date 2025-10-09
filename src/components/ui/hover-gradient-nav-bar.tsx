@@ -84,7 +84,7 @@ function HoverGradientNavBar(): React.JSX.Element {
     },
     { 
       icon: <Info className="h-5 w-5" />, 
-      label: "How it works", 
+      label: "About", 
       href: "/about", 
       gradient: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.06) 50%, hsl(var(--primary) / 0) 100%)", 
       iconColor: "group-hover:text-emerald-500" 
@@ -110,7 +110,7 @@ function HoverGradientNavBar(): React.JSX.Element {
   ] : [
     { 
       icon: <HelpCircle className="h-5 w-5" />, 
-      label: "FAQ's", 
+      label: "How it works", 
       href: "/faqs", 
       gradient: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.06) 50%, hsl(var(--primary) / 0) 100%)", 
       iconColor: "group-hover:text-emerald-500" 
