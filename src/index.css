@@ -216,6 +216,7 @@
 
 @layer components {
   .loader {
+    position: relative;
     transform: rotateZ(45deg);
     perspective: 1000px;
     border-radius: 50%;
