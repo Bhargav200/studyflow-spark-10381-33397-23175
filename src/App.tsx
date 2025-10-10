@@ -23,7 +23,7 @@ const EmailGeneratorTool = lazy(() => import("./pages/tools/EmailGeneratorTool")
 // Loading fallback component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+    <span className="loader"></span>
   </div>
 );
 
