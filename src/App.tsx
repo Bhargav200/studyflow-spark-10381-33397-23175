@@ -5,8 +5,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
+import { LenisProvider } from "./contexts/LenisContext";
 import { lazy, Suspense } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Logo from "./components/Logo";
+import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 
 // Lazy load all pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -36,63 +40,75 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-            {/* Public routes */}
-            <Route path="/" element={<Index />} />
-            <Route path="/tools" element={<Tools />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/contact" element={<Contact />} />
+          <LenisProvider>
+            <Logo />
+            <ScrollToTop />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+              {/* Public routes */}
+              <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+              <Route path="/tools" element={<PageTransition><Tools /></PageTransition>} />
+              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+              <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             
             
-            {/* Auth routes - accessible only when NOT authenticated */}
-            <Route 
-              path="/login" 
-              element={
-                <ProtectedRoute requiresAuth={false} redirectTo="/dashboard">
-                  <Login />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/register" 
-              element={
-                <ProtectedRoute requiresAuth={false} redirectTo="/dashboard">
-                  <Register />
-                </ProtectedRoute>
-              } 
-            />
+              {/* Auth routes - accessible only when NOT authenticated */}
+              <Route 
+                path="/login" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute requiresAuth={false} redirectTo="/dashboard">
+                      <Login />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/register" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute requiresAuth={false} redirectTo="/dashboard">
+                      <Register />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
             
-            {/* Protected routes - require authentication */}
-            <Route 
-              path="/dashboard" 
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              } 
-            />
+              {/* Protected routes - require authentication */}
+              <Route 
+                path="/dashboard" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <Dashboard />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
             
-            {/* Tool routes - all protected */}
-            <Route 
-              path="/tools/email-generator" 
-              element={
-                <ProtectedRoute>
-                  <EmailGeneratorTool />
-                </ProtectedRoute>
-              } 
-            />
-            <Route path="/tools/resume-generator" element={<NotFound />} />
-            <Route path="/tools/project-documentation" element={<NotFound />} />
-            <Route path="/tools/resume-scorer" element={<NotFound />} />
-            <Route path="/tools/interview-questions" element={<NotFound />} />
-            <Route path="/tools/sop-letter-generator" element={<NotFound />} />
-            
-            {/* Catch all */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          </Suspense>
+              {/* Tool routes - all protected */}
+              <Route 
+                path="/tools/email-generator" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <EmailGeneratorTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route path="/tools/resume-generator" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route path="/tools/project-documentation" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route path="/tools/resume-scorer" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route path="/tools/interview-questions" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route path="/tools/sop-letter-generator" element={<PageTransition><NotFound /></PageTransition>} />
+              
+              {/* Catch all */}
+              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+            </Routes>
+            </Suspense>
+          </LenisProvider>
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>
