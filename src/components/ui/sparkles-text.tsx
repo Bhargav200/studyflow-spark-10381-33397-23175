@@ -11,11 +11,11 @@ export const SparklesText = ({ children, className }: SparklesTextProps) => {
 
   useEffect(() => {
     const createSparkles = () => {
-      const newSparkles = Array.from({ length: 12 }, (_, i) => ({
+      const newSparkles = Array.from({ length: 10 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 16 + 12,
+        size: Math.random() * 6 + 4,
         delay: Math.random() * 2
       }));
       setSparkles(newSparkles);

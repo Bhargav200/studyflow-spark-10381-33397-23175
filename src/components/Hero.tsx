@@ -31,10 +31,10 @@ const Hero = () => {
             All your AI tools, <span className="text-gradient">in one intelligent orbit</span>
           </h1>
           
-          <SparklesText>
+          <SparklesText className="block">
             <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
               Boost your career prospects with our suite of AI tools designed specifically for students. 
-              Create professional emails, ATS-optimized resumes, and practice with tailored interview questions.
+              Create professional emails, ATS resumes, and practice with tailored interview questions.
             </p>
           </SparklesText>
           
