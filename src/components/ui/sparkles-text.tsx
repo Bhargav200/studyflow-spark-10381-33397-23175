@@ -11,18 +11,18 @@ export const SparklesText = ({ children, className }: SparklesTextProps) => {
 
   useEffect(() => {
     const createSparkles = () => {
-      const newSparkles = Array.from({ length: 8 }, (_, i) => ({
+      const newSparkles = Array.from({ length: 12 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 16 + 12,
         delay: Math.random() * 2
       }));
       setSparkles(newSparkles);
     };
 
     createSparkles();
-    const interval = setInterval(createSparkles, 3000);
+    const interval = setInterval(createSparkles, 2500);
 
     return () => clearInterval(interval);
   }, []);
@@ -32,7 +32,7 @@ export const SparklesText = ({ children, className }: SparklesTextProps) => {
       {sparkles.map((sparkle) => (
         <span
           key={sparkle.id}
-          className="absolute pointer-events-none animate-sparkle"
+          className="absolute pointer-events-none animate-sparkle z-10"
           style={{
             left: `${sparkle.x}%`,
             top: `${sparkle.y}%`,
@@ -42,7 +42,7 @@ export const SparklesText = ({ children, className }: SparklesTextProps) => {
           }}
         >
           <svg
-            className="text-emerald-400"
+            className="text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]"
             fill="currentColor"
             viewBox="0 0 24 24"
           >

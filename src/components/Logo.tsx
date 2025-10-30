@@ -7,9 +7,8 @@ const Logo = () => {
       <img 
         src={logo} 
         alt="StudyOrbit Logo" 
-        className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+        className="h-16 w-auto md:h-24 md:w-auto lg:h-32 lg:w-auto object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
         loading="eager"
-        fetchPriority="high"
       />
     </Link>
   );
