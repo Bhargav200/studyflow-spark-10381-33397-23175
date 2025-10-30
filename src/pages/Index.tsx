@@ -2,7 +2,6 @@
 import React, { lazy, Suspense } from 'react';
 import HoverGradientNavBar from '../components/ui/hover-gradient-nav-bar';
 import Hero from '../components/Hero';
-import AnimatedBackground from '../components/AnimatedBackground';
 
 // Lazy load heavy sections
 const ToolsSection = lazy(() => import('../components/ToolsSection'));
@@ -14,7 +13,6 @@ const Footer = lazy(() => import('../components/Footer'));
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen relative" style={{ willChange: 'transform' }}>
-      <AnimatedBackground />
       <HoverGradientNavBar />
       <main className="flex-grow">
         <Hero />
