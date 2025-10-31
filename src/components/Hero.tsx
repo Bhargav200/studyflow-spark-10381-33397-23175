@@ -3,21 +3,17 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import Particles from '@/components/Particles';
+import Aurora from '@/components/Aurora';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center pt-32 pb-10 relative overflow-hidden">
-      <Particles
-        particleCount={150}
-        particleSpread={12}
-        speed={0.08}
-        particleColors={['#10b981', '#34d399', '#059669']}
-        alphaParticles={true}
-        particleBaseSize={80}
-        sizeRandomness={0.8}
-        cameraDistance={18}
-        className="opacity-40"
+      <Aurora
+        colorStops={['#10b981', '#34d399', '#059669']}
+        amplitude={1.5}
+        blend={0.6}
+        speed={0.8}
+        className="opacity-50"
       />
       
       <div className="container mx-auto px-4 relative z-10">
