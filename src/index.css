@@ -289,4 +289,22 @@
   .container {
     @apply px-4;
   }
+  
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .section {
+    @apply py-12;
+  }
 }

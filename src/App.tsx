@@ -8,7 +8,6 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { LenisProvider } from "./contexts/LenisContext";
 import { lazy, Suspense } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Logo from "./components/Logo";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
@@ -41,7 +40,6 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <LenisProvider>
-            <Logo />
             <ScrollToTop />
             <Suspense fallback={<PageLoader />}>
               <Routes>

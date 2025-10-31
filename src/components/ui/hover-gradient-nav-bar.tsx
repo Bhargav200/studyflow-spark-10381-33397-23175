@@ -7,6 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { auth, signOut } from '@/lib/firebase';
 import { useNavigate } from 'react-router-dom';
 import { toast } from '@/hooks/use-toast';
+import logo from '@/assets/logo.png';
 
 interface HoverGradientMenuItem {
   icon: React.ReactNode;
@@ -120,16 +121,25 @@ function HoverGradientNavBar(): React.JSX.Element {
   const menuItems = [...publicMenuItems, ...authMenuItems];
 
   return (
-    <div className="fixed top-4 left-0 w-full md:top-6 md:left-1/2 md:-translate-x-1/2 z-50">
+    <div className="fixed top-0 left-0 w-full md:top-6 md:left-1/2 md:-translate-x-1/2 z-50">
       <motion.nav
-        className="w-full md:w-fit mx-auto px-2 md:px-4 py-2 md:py-3 rounded-none md:rounded-3xl 
+        className="w-full md:w-fit mx-auto px-3 md:px-6 py-2 md:py-3 rounded-none md:rounded-3xl 
         bg-background/70 backdrop-blur-lg 
         border-b md:border border-border/60
         shadow-lg md:shadow-xl relative"
         initial="initial"
         whileHover="hover"
       >
-        <ul className="flex items-center justify-around md:justify-center gap-1 md:gap-3 relative z-10">
+        <div className="flex items-center justify-between md:justify-center gap-2 md:gap-4">
+          <Link to="/" className="flex-shrink-0 group">
+            <img 
+              src={logo} 
+              alt="StudyOrbit Logo" 
+              className="h-10 w-auto md:h-12 lg:h-14 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+              loading="eager"
+            />
+          </Link>
+          <ul className="flex items-center justify-center gap-1 md:gap-3 relative z-10">
           {menuItems.map((item: HoverGradientMenuItem) => (
             <motion.li key={item.label} className="relative flex-1 md:flex-none">
               <motion.div
@@ -210,7 +220,8 @@ function HoverGradientNavBar(): React.JSX.Element {
               </motion.div>
             </motion.li>
           ))}
-        </ul>
+          </ul>
+        </div>
       </motion.nav>
     </div>
   );

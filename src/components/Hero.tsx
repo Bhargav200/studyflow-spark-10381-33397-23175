@@ -7,7 +7,7 @@ import Aurora from '@/components/Aurora';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-32 pb-10 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-10 px-4 relative overflow-hidden">
       <Aurora
         colorStops={['#10b981', '#34d399', '#059669']}
         amplitude={1.5}
@@ -16,47 +16,47 @@ const Hero = () => {
         className="opacity-50"
       />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-8 animate-fade-in">
-            <Sparkles size={18} className="mr-2" />
+          <div className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs md:text-sm font-medium mb-6 md:mb-8 animate-fade-in">
+            <Sparkles size={16} className="mr-1.5 md:mr-2" />
             <span>Introducing StudyOrbit for Students</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 animate-slide-up px-2" style={{ animationDelay: '0.2s' }}>
             All your AI tools, <span className="text-gradient">in one intelligent orbit</span>
           </h1>
           
           <SparklesText className="block">
-            <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-base md:text-xl text-white/80 mb-8 md:mb-10 max-w-3xl mx-auto animate-slide-up px-2" style={{ animationDelay: '0.4s' }}>
               Boost your career prospects with our suite of AI tools designed specifically for students. 
               Create professional emails, ATS resumes, and practice with tailored interview questions.
             </p>
           </SparklesText>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Link to="/register">
-              <Button size="lg" className="button-gradient h-14 px-8 text-lg font-medium">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 animate-slide-up px-4" style={{ animationDelay: '0.6s' }}>
+            <Link to="/register" className="w-full sm:w-auto">
+              <Button size="lg" className="button-gradient h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-medium w-full sm:w-auto">
                 Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </Button>
             </Link>
-            <Link to="/tools">
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-medium border-white/20 bg-white/5 hover:bg-white/10">
+            <Link to="/tools" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-medium border-white/20 bg-white/5 hover:bg-white/10 w-full sm:w-auto">
                 Explore Tools
               </Button>
             </Link>
           </div>
           
-          <div className="mt-12 flex items-center justify-center animate-slide-up" style={{ animationDelay: '0.8s' }}>
-            <div className="flex -space-x-4">
+          <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+            <div className="flex -space-x-3 md:-space-x-4">
               {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-xs font-medium border-2 border-background">
+                <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-xs font-medium border-2 border-background">
                   {String.fromCharCode(64 + i)}
                 </div>
               ))}
             </div>
-            <div className="ml-4 text-sm text-white/70">
+            <div className="sm:ml-4 text-xs md:text-sm text-white/70 text-center sm:text-left">
               <span className="font-semibold text-white">500+</span> students already using our tools
             </div>
           </div>
