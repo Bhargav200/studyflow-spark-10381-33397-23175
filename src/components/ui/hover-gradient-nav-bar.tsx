@@ -131,11 +131,11 @@ function HoverGradientNavBar(): React.JSX.Element {
         whileHover="hover"
       >
         <div className="flex items-center justify-between md:justify-center gap-2 md:gap-4">
-          <Link to="/" className="flex-shrink-0 group">
+          <Link to="/" className="flex-shrink-0 group md:mr-6">
             <img 
               src={logo} 
               alt="StudyOrbit Logo" 
-              className="h-10 w-auto md:h-12 lg:h-14 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+              className="h-12 w-auto md:h-16 lg:h-20 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
               loading="eager"
             />
           </Link>

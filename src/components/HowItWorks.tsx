@@ -95,130 +95,142 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary/30 backdrop-blur-sm">
+    <section className="py-20 bg-secondary/30 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Main Heading */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-              <Sparkles size={18} className="mr-2" />
-              <span>How StudyOrbit Works</span>
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold mb-8 tracking-wide">
+              <Sparkles size={20} className="mr-2" />
+              <span>HOW STUDYORBIT WORKS</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight">
               Your AI-Powered Career <span className="text-gradient">Success Platform</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed font-light">
               StudyOrbit is an all-in-one platform that empowers students with cutting-edge AI tools to accelerate their academic and professional journey. 
               From crafting perfect resumes to preparing for interviews, we provide everything you need to stand out and succeed.
             </p>
           </div>
 
           {/* What Is StudyOrbit Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-6 text-center">What is <span className="text-gradient">StudyOrbit</span>?</h3>
-            <div className="glass-card p-8 rounded-xl">
-              <p className="text-white/80 text-lg leading-relaxed mb-4">
+          <div className="mb-20">
+            <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center tracking-tight">
+              What is <span className="text-gradient">StudyOrbit</span>?
+            </h3>
+            <div className="glass-card p-10 md:p-12 rounded-2xl">
+              <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-6 font-light">
                 StudyOrbit is a comprehensive AI-powered platform designed specifically for students who want to excel in their career development. 
                 We understand the challenges students face—from creating standout resumes to preparing for competitive interviews and crafting compelling applications.
               </p>
-              <p className="text-white/80 text-lg leading-relaxed">
-                Our mission is simple: democratize access to professional-grade career tools that were once only available through expensive career coaches and consultants. 
+              <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light">
+                Our mission is simple: <span className="font-semibold text-emerald-400">democratize access to professional-grade career tools</span> that were once only available through expensive career coaches and consultants. 
                 With StudyOrbit, every student can access world-class AI assistance to build their professional presence, regardless of their background or resources.
               </p>
             </div>
           </div>
 
           {/* Available Tools Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">Our <span className="text-gradient">AI-Powered Tools</span></h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mb-20">
+            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
+              Our <span className="text-gradient">AI-Powered Tools</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {tools.map((tool, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl hover:border-emerald-500/30 transition-all duration-300">
-                  <div className="bg-emerald-500/10 p-3 rounded-lg w-max mb-4 text-emerald-400">
+                <div key={index} className="glass-card p-8 rounded-2xl hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 group">
+                  <div className="bg-emerald-500/10 p-4 rounded-xl w-max mb-5 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
                     {tool.icon}
                   </div>
-                  <h4 className="font-semibold mb-2">{tool.name}</h4>
-                  <p className="text-white/70 text-sm">{tool.description}</p>
+                  <h4 className="font-bold text-lg mb-3">{tool.name}</h4>
+                  <p className="text-white/70 text-base leading-relaxed">{tool.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* How It Helps Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">How StudyOrbit <span className="text-gradient">Helps You Succeed</span></h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mb-20">
+            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
+              How StudyOrbit <span className="text-gradient">Helps You Succeed</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {howItHelps.map((item, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl">
-                  <div className="mb-4">{item.icon}</div>
-                  <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
-                  <p className="text-white/70">{item.description}</p>
+                <div key={index} className="glass-card p-8 rounded-2xl hover:border-emerald-500/40 transition-all duration-300">
+                  <div className="mb-6">{item.icon}</div>
+                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                  <p className="text-white/80 text-base leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Steps to Success Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">Your Path to <span className="text-gradient">Success</span></h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mb-20">
+            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
+              Your Path to <span className="text-gradient">Success</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {successSteps.map((item, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-2xl font-bold">
+                <div key={index} className="glass-card p-8 rounded-2xl text-center hover:border-emerald-500/40 transition-all duration-300">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-emerald-500/20">
                     {item.step}
                   </div>
-                  <h4 className="font-semibold mb-3">{item.title}</h4>
-                  <p className="text-white/70 text-sm">{item.description}</p>
+                  <h4 className="font-bold text-lg mb-4">{item.title}</h4>
+                  <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Merit & Achievement Section */}
-          <div className="glass-card p-8 rounded-xl bg-gradient-to-br from-emerald-900/20 to-background">
-            <div className="text-center mb-6">
-              <Trophy className="w-12 h-12 mx-auto mb-4 text-emerald-400" />
-              <h3 className="text-2xl font-bold mb-4">Building Your <span className="text-gradient">Merit & Excellence</span></h3>
+          <div className="glass-card p-10 md:p-12 rounded-2xl bg-gradient-to-br from-emerald-900/20 to-background">
+            <div className="text-center mb-10">
+              <Trophy className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+                Building Your <span className="text-gradient">Merit & Excellence</span>
+              </h3>
             </div>
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+            <div className="space-y-6 max-w-4xl mx-auto">
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white/80 font-medium mb-1">Competitive Edge in Applications</p>
-                  <p className="text-white/70 text-sm">Stand out in scholarship applications, internship programs, and graduate school admissions with professionally crafted materials.</p>
+                  <p className="text-white/90 font-bold text-lg mb-2">Competitive Edge in Applications</p>
+                  <p className="text-white/70 text-base leading-relaxed">Stand out in scholarship applications, internship programs, and graduate school admissions with professionally crafted materials.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white/80 font-medium mb-1">Higher Success Rates</p>
-                  <p className="text-white/70 text-sm">Our ATS-optimized resumes and tailored application materials significantly increase your chances of getting interviews and offers.</p>
+                  <p className="text-white/90 font-bold text-lg mb-2">Higher Success Rates</p>
+                  <p className="text-white/70 text-base leading-relaxed">Our ATS-optimized resumes and tailored application materials significantly increase your chances of getting interviews and offers.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white/80 font-medium mb-1">Confidence in Communication</p>
-                  <p className="text-white/70 text-sm">Master the art of professional communication through AI-guided email writing and interview preparation, building skills that last a lifetime.</p>
+                  <p className="text-white/90 font-bold text-lg mb-2">Confidence in Communication</p>
+                  <p className="text-white/70 text-base leading-relaxed">Master the art of professional communication through AI-guided email writing and interview preparation, building skills that last a lifetime.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white/80 font-medium mb-1">Track Your Growth</p>
-                  <p className="text-white/70 text-sm">Monitor your progress, see improvements in your materials over time, and build a portfolio of accomplishments that demonstrate your merit.</p>
+                  <p className="text-white/90 font-bold text-lg mb-2">Track Your Growth</p>
+                  <p className="text-white/70 text-base leading-relaxed">Monitor your progress, see improvements in your materials over time, and build a portfolio of accomplishments that demonstrate your merit.</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Encouraging Message */}
-          <div className="mt-16 text-center">
-            <div className="inline-block glass-card p-8 rounded-xl max-w-3xl">
-              <Rocket className="w-12 h-12 mx-auto mb-4 text-emerald-400" />
-              <h3 className="text-2xl font-bold mb-4">Ready to <span className="text-gradient">Launch Your Career</span>?</h3>
-              <p className="text-white/80 text-lg">
-                Join over 500+ students who are already using StudyOrbit to transform their career prospects. 
+          <div className="mt-20 text-center">
+            <div className="inline-block glass-card p-10 md:p-12 rounded-2xl max-w-4xl">
+              <Rocket className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+                Ready to <span className="text-gradient">Launch Your Career</span>?
+              </h3>
+              <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light">
+                Join over <span className="font-bold text-emerald-400">500+ students</span> who are already using StudyOrbit to transform their career prospects. 
                 Every great journey starts with a single step—take yours today and discover how our AI tools can help you achieve your dreams.
               </p>
             </div>
