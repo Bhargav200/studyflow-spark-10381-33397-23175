@@ -10,6 +10,8 @@ import { lazy, Suspense } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 // Lazy load all pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -40,6 +42,14 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <LenisProvider>
+            <Link to="/" className="fixed top-4 left-4 z-50 group">
+              <img 
+                src={logo} 
+                alt="StudyOrbit Logo" 
+                className="h-12 w-auto md:h-16 lg:h-20 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+                loading="eager"
+              />
+            </Link>
             <ScrollToTop />
             <Suspense fallback={<PageLoader />}>
               <Routes>
