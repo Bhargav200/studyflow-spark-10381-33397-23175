@@ -4,9 +4,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import Aurora from '@/components/Aurora';
+import { useOptimizedAnimation } from '@/hooks/useOptimizedAnimation';
+
 const Hero = () => {
-  return <section className="min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-10 px-4 relative overflow-hidden">
-      <Aurora colorStops={['#10b981', '#34d399', '#059669']} amplitude={1.5} blend={0.6} speed={0.8} className="opacity-50" />
+  const { enableAurora } = useOptimizedAnimation();
+
+  return <section className="min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-10 px-4 relative overflow-hidden touch-manipulation">
+      {enableAurora && <Aurora colorStops={['#10b981', '#34d399', '#059669']} amplitude={1.5} blend={0.6} speed={0.8} className="opacity-50" />}
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,7 +41,7 @@ const Hero = () => {
               
             </Link>
             <Link to="/tools" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-medium border-white/20 bg-white/5 hover:bg-white/10 w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-medium border-white/20 bg-white/5 hover:bg-white/10 w-full sm:w-auto active:scale-95 transition-transform">
                 Explore Tools
               </Button>
             </Link>

@@ -79,6 +79,36 @@
     overflow: hidden;
   }
 
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  /* Touch optimizations */
+  button, a, [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Performance optimizations */
+  .tool-card, .tech-card, .glass-card {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    /* Mobile-specific optimizations */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .animate-fade-in,
+    .animate-slide-up {
+      animation-duration: 0.2s !important;
+    }
+  }
+
   .lenis.lenis-scrolling iframe {
     pointer-events: none;
   }

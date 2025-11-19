@@ -3,26 +3,31 @@ import React, { lazy, Suspense } from 'react';
 import HoverGradientNavBar from '../components/ui/hover-gradient-nav-bar';
 import Hero from '../components/Hero';
 import Ribbons from '../components/Ribbons';
+import { useOptimizedAnimation } from '../hooks/useOptimizedAnimation';
 
 // Lazy load heavy sections
-const ToolsSection = lazy(() => import('../components/ToolsSection'));
+const ToolsSection = lazy(() => import('../components/ToolsSectionOptimized'));
 const FeaturesSection = lazy(() => import('../components/FeaturesSection'));
 const TestimonialSection = lazy(() => import('../components/TestimonialSection'));
 const CTASection = lazy(() => import('../components/CTASection'));
 const Footer = lazy(() => import('../components/Footer'));
 
 const Index = () => {
+  const { enableRibbons } = useOptimizedAnimation();
+
   return (
     <div className="flex flex-col min-h-screen relative" style={{ willChange: 'transform' }}>
-      <Ribbons
-        colors={['#10b981', '#34d399', '#059669', '#6ee7b7']}
-        baseThickness={25}
-        enableFade={true}
-        enableShaderEffect={true}
-        effectAmplitude={1.5}
-        speedMultiplier={0.5}
-        pointCount={40}
-      />
+      {enableRibbons && (
+        <Ribbons
+          colors={['#10b981', '#34d399', '#059669', '#6ee7b7']}
+          baseThickness={25}
+          enableFade={true}
+          enableShaderEffect={true}
+          effectAmplitude={1.5}
+          speedMultiplier={0.5}
+          pointCount={40}
+        />
+      )}
       <HoverGradientNavBar />
       <main className="flex-grow">
         <Hero />
