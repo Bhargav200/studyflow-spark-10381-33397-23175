@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -7,6 +7,8 @@ import { Mail, FileText, MessageSquare, ArrowRight, FileCheck, Edit, BookText } 
 import RobotAnimation from './RobotAnimation';
 
 const ToolsSection = () => {
+  const [hoveredTool, setHoveredTool] = useState<string | null>(null);
+  
   const tools = [
     {
       id: 'email-generator',
@@ -15,7 +17,8 @@ const ToolsSection = () => {
       description: 'Craft personalized professional emails that get responses with industry-specific templates and tone customization.',
       path: '/tools/email-generator',
       badge: 'Most Popular',
-      name: 'Email Generator' // Shortened name for 3D labels
+      name: 'Email Generator',
+      image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=800&auto=format&fit=crop&fm=jpg&brightness=1.2'
     },
     {
       id: 'resume-generator',
@@ -24,7 +27,8 @@ const ToolsSection = () => {
       description: 'Create resumes optimized for Applicant Tracking Systems with keyword optimization and real-time scoring.',
       path: '/tools/resume-generator',
       badge: 'Premium',
-      name: 'Resume Builder'
+      name: 'Resume Builder',
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop&brightness=1.3'
     },
     {
       id: 'project-documentation',
@@ -33,7 +37,8 @@ const ToolsSection = () => {
       description: 'Generate comprehensive project documentation from your code, including README files, API documentation, and user guides.',
       path: '/tools/project-documentation',
       badge: 'New',
-      name: 'Documentation'
+      name: 'Documentation',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop&brightness=1.3'
     },
     {
       id: 'resume-scorer',
@@ -82,24 +87,34 @@ const ToolsSection = () => {
           {tools.slice(0, 3).map((tool, index) => (
             <div 
               key={tool.id}
-              className="tool-card tech-card"
+              className="tool-card tech-card overflow-hidden"
               style={{ animationDelay: `${index * 0.2}s` }}
+              onMouseEnter={() => setHoveredTool(tool.id)}
+              onMouseLeave={() => setHoveredTool(null)}
             >
               {tool.badge && (
-                <Badge variant="secondary" className={`absolute top-4 right-4 ${tool.badge === 'Free' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' : tool.badge === 'New' ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'}`}>
+                <Badge variant="secondary" className={`absolute top-4 right-4 z-10 ${tool.badge === 'Free' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' : tool.badge === 'New' ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'}`}>
                   {tool.badge}
                 </Badge>
               )}
               
-              <div className="mb-6 interactive-icon">{tool.icon}</div>
+              {/* Hover background image */}
+              <div 
+                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 ${hoveredTool === tool.id ? 'opacity-20 scale-105' : 'opacity-0'}`}
+                style={{ 
+                  backgroundImage: `url(${tool.image})`
+                }}
+              />
               
-              <h3 className="text-xl font-semibold mb-3">{tool.title}</h3>
+              <div className="mb-6 interactive-icon relative z-10">{tool.icon}</div>
               
-              <p className="text-white/70 mb-6 text-sm leading-relaxed">
+              <h3 className="text-xl font-semibold mb-3 relative z-10">{tool.title}</h3>
+              
+              <p className="text-white/70 mb-6 text-sm leading-relaxed relative z-10">
                 {tool.description}
               </p>
               
-              <div className="flex justify-between items-center mt-auto">
+              <div className="flex justify-between items-center mt-auto relative z-10">
                 <div></div>
                 
                 <Link to={tool.path}>

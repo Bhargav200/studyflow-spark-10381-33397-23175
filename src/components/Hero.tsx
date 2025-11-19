@@ -46,9 +46,11 @@ const Hero = () => {
           <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 animate-slide-up" style={{
           animationDelay: '0.8s'
         }}>
-            <div className="flex -space-x-3 md:-space-x-4">
-              {[1, 2, 3, 4].map(i => {})}
-            </div>
+          <div className="flex -space-x-3 md:-space-x-4">
+            {[1, 2, 3, 4].map(i => (
+              <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-2 border-background" />
+            ))}
+          </div>
             <div className="sm:ml-4 text-xs md:text-sm text-white/70 text-center sm:text-left">
               <span className="font-semibold text-white">500+</span> students already using our tools
             </div>
