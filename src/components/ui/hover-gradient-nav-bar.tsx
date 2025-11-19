@@ -7,7 +7,6 @@ import { useAuth } from '@/contexts/AuthContext';
 import { auth, signOut } from '@/lib/firebase';
 import { useNavigate } from 'react-router-dom';
 import { toast } from '@/hooks/use-toast';
-import logo from '@/assets/logo.png';
 
 interface HoverGradientMenuItem {
   icon: React.ReactNode;
@@ -130,15 +129,7 @@ function HoverGradientNavBar(): React.JSX.Element {
         initial="initial"
         whileHover="hover"
       >
-        <div className="flex items-center justify-between md:justify-center gap-2 md:gap-4">
-          <Link to="/" className="flex-shrink-0 group md:mr-6">
-            <img 
-              src={logo} 
-              alt="StudyOrbit Logo" 
-              className="h-12 w-auto md:h-16 lg:h-20 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
-              loading="eager"
-            />
-          </Link>
+        <div className="flex items-center justify-center gap-2 md:gap-4">
           <ul className="flex items-center justify-center gap-1 md:gap-3 relative z-10">
           {menuItems.map((item: HoverGradientMenuItem) => (
             <motion.li key={item.label} className="relative flex-1 md:flex-none">
