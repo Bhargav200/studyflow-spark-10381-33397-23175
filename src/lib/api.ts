@@ -138,4 +138,13 @@ export const sopLetterAPI = {
   },
 };
 
+// Generic AI content generation helper (mock for now until backend is set up)
+export const generateContent = async (prompt: string): Promise<string> => {
+  // This is a placeholder that will be replaced with actual API call
+  // For now, return a mock response
+  await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
+  
+  return `This is a mock response. Once you set up your backend API, this function will call your actual AI service with the prompt:\n\n"${prompt}"\n\nPlease integrate with your preferred AI service (OpenAI, Anthropic, etc.) in your backend.`;
+};
+
 export default api;

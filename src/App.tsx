@@ -24,6 +24,11 @@ const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const EmailGeneratorTool = lazy(() => import("./pages/tools/EmailGeneratorTool"));
+const ResumeGeneratorTool = lazy(() => import("./pages/tools/ResumeGeneratorTool"));
+const ProjectDocumentationTool = lazy(() => import("./pages/tools/ProjectDocumentationTool"));
+const ResumeScorerTool = lazy(() => import("./pages/tools/ResumeScorerTool"));
+const InterviewQuestionsTool = lazy(() => import("./pages/tools/InterviewQuestionsTool"));
+const SOPLetterGeneratorTool = lazy(() => import("./pages/tools/SOPLetterGeneratorTool"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -106,11 +111,56 @@ const App = () => (
                   </PageTransition>
                 } 
               />
-              <Route path="/tools/resume-generator" element={<PageTransition><NotFound /></PageTransition>} />
-              <Route path="/tools/project-documentation" element={<PageTransition><NotFound /></PageTransition>} />
-              <Route path="/tools/resume-scorer" element={<PageTransition><NotFound /></PageTransition>} />
-              <Route path="/tools/interview-questions" element={<PageTransition><NotFound /></PageTransition>} />
-              <Route path="/tools/sop-letter-generator" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route 
+                path="/tools/resume-generator" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <ResumeGeneratorTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/tools/project-documentation" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <ProjectDocumentationTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/tools/resume-scorer" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <ResumeScorerTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/tools/interview-questions" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <InterviewQuestionsTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/tools/sop-letter-generator" 
+                element={
+                  <PageTransition>
+                    <ProtectedRoute>
+                      <SOPLetterGeneratorTool />
+                    </ProtectedRoute>
+                  </PageTransition>
+                } 
+              />
               
               {/* Catch all */}
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
