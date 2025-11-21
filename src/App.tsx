@@ -39,13 +39,6 @@ const PageLoader = () => (
 
 const queryClient = new QueryClient();
 
-// ⚠️⚠️⚠️ TEMPORARY DEV MODE - AUTHENTICATION DISABLED ⚠️⚠️⚠️
-// TODO: BEFORE EXPORTING TO GITHUB, RE-ENABLE AUTHENTICATION!
-// 1. Uncomment ProtectedRoute wrappers for all tool routes (lines ~104-163)
-// 2. Uncomment the auth redirect in Dashboard.tsx (lines ~24-29)
-// 3. Remove this warning comment
-// ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
@@ -107,15 +100,14 @@ const App = () => (
                 } 
               />
             
-              {/* Tool routes - TEMPORARILY UNPROTECTED FOR DEVELOPMENT */}
-              {/* TODO: Re-wrap these with <ProtectedRoute> before deploying to GitHub */}
+              {/* Tool routes - Protected */}
               <Route 
                 path="/tools/email-generator" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <EmailGeneratorTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
@@ -123,9 +115,9 @@ const App = () => (
                 path="/tools/resume-generator" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <ResumeGeneratorTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
@@ -133,9 +125,9 @@ const App = () => (
                 path="/tools/project-documentation" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <ProjectDocumentationTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
@@ -143,9 +135,9 @@ const App = () => (
                 path="/tools/resume-scorer" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <ResumeScorerTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
@@ -153,9 +145,9 @@ const App = () => (
                 path="/tools/interview-questions" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <InterviewQuestionsTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
@@ -163,9 +155,9 @@ const App = () => (
                 path="/tools/sop-letter-generator" 
                 element={
                   <PageTransition>
-                    {/* <ProtectedRoute> */}
+                    <ProtectedRoute>
                       <SOPLetterGeneratorTool />
-                    {/* </ProtectedRoute> */}
+                    </ProtectedRoute>
                   </PageTransition>
                 } 
               />
