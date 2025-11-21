@@ -47,9 +47,7 @@ const Hero = () => {
           animationDelay: '0.8s'
         }}>
           <div className="flex -space-x-3 md:-space-x-4">
-            {[1, 2, 3, 4].map(i => (
-              <div key={i} className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-500/20 border-2 border-background" />
-            ))}
+            {[1, 2, 3, 4].map(i => {})}
           </div>
             <div className="sm:ml-4 text-xs md:text-sm text-white/70 text-center sm:text-left">
               <span className="font-semibold text-white">500+</span> students already using our tools
