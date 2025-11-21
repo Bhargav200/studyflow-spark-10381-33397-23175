@@ -22,12 +22,11 @@ const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Redirect if not logged in
-  // ⚠️ TEMPORARILY DISABLED FOR DEVELOPMENT - RE-ENABLE BEFORE GITHUB EXPORT ⚠️
-  // useEffect(() => {
-  //   if (!currentUser && !isLoading) {
-  //     navigate('/login');
-  //   }
-  // }, [currentUser, navigate, isLoading]);
+  useEffect(() => {
+    if (!currentUser && !isLoading) {
+      navigate('/login');
+    }
+  }, [currentUser, navigate, isLoading]);
 
   useEffect(() => {
     const fetchToolUsage = async () => {

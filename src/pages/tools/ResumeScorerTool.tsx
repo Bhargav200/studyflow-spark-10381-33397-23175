@@ -39,12 +39,11 @@ const ResumeScorerTool = () => {
     },
   });
 
-  // ⚠️ TEMPORARILY DISABLED FOR DEVELOPMENT - RE-ENABLE BEFORE GITHUB EXPORT ⚠️
-  // useEffect(() => {
-  //   if (!currentUser) {
-  //     navigate('/login');
-  //   }
-  // }, [currentUser, navigate]);
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/login');
+    }
+  }, [currentUser, navigate]);
 
   const onSubmit = async (data: ScorerFormValues) => {
     setIsLoading(true);

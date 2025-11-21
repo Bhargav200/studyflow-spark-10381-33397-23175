@@ -61,24 +61,22 @@ const EmailGeneratorTool = () => {
     },
   });
 
-  // ⚠️ TEMPORARILY DISABLED FOR DEVELOPMENT - RE-ENABLE BEFORE GITHUB EXPORT ⚠️
-  // React.useEffect(() => {
-  //   if (!currentUser && !form.formState.isSubmitting) {
-  //     navigate('/login');
-  //   }
-  // }, [currentUser, navigate, form.formState.isSubmitting]);
+  React.useEffect(() => {
+    if (!currentUser && !form.formState.isSubmitting) {
+      navigate('/login');
+    }
+  }, [currentUser, navigate, form.formState.isSubmitting]);
 
   const onSubmit = async (data: EmailFormValues) => {
-    // ⚠️ TEMPORARILY DISABLED FOR DEVELOPMENT - RE-ENABLE BEFORE GITHUB EXPORT ⚠️
-    // if (!userData) {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Authentication Error",
-    //     description: "Please log in to use this tool",
-    //   });
-    //   navigate('/login');
-    //   return;
-    // }
+    if (!userData) {
+      toast({
+        variant: "destructive",
+        title: "Authentication Error",
+        description: "Please log in to use this tool",
+      });
+      navigate('/login');
+      return;
+    }
 
     setIsLoading(true);
 
