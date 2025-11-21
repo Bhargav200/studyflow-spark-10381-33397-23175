@@ -1,112 +1,75 @@
-
 import React, { useEffect } from 'react';
 import HoverGradientNavBar from '../components/ui/hover-gradient-nav-bar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  Sparkles, 
-  Target, 
-  Trophy, 
-  Rocket, 
-  Brain, 
-  CheckCircle2,
-  Mail,
-  FileText,
-  MessageSquare,
-  BookText,
-  FileCheck,
-  Edit
-} from 'lucide-react';
-
+import { Sparkles, Target, Trophy, Rocket, Brain, CheckCircle2, Mail, FileText, MessageSquare, BookText, FileCheck, Edit } from 'lucide-react';
 const About = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const tools = [
-    {
-      icon: <Mail className="w-6 h-6" />,
-      name: 'AI Cold Email Generator',
-      description: 'Craft personalized, professional emails that get responses'
-    },
-    {
-      icon: <FileText className="w-6 h-6" />,
-      name: 'ATS-Friendly Resume Generator',
-      description: 'Create resumes optimized for Applicant Tracking Systems'
-    },
-    {
-      icon: <BookText className="w-6 h-6" />,
-      name: 'Project Documentation Generator',
-      description: 'Generate comprehensive project documentation from code'
-    },
-    {
-      icon: <FileCheck className="w-6 h-6" />,
-      name: 'ATS Resume Scorer',
-      description: 'Get instant feedback on your resume with ATS compatibility scoring'
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      name: 'AI Interview Questions Generator',
-      description: 'Practice with role-specific interview questions'
-    },
-    {
-      icon: <Edit className="w-6 h-6" />,
-      name: 'SOP & Recommendation Letter Generator',
-      description: 'Craft compelling statements tailored to your goals'
-    }
-  ];
-
-  const howItHelps = [
-    {
-      icon: <Trophy className="w-8 h-8 text-emerald-500" />,
-      title: 'Stand Out from the Crowd',
-      description: 'Create professional, polished career materials that showcase your unique strengths and make you memorable to recruiters and admissions officers.'
-    },
-    {
-      icon: <Target className="w-8 h-8 text-emerald-500" />,
-      title: 'Achieve Your Career Goals',
-      description: 'Whether you\'re applying for internships, jobs, or graduate programs, our tools help you present your best self and increase your chances of success.'
-    },
-    {
-      icon: <Rocket className="w-8 h-8 text-emerald-500" />,
-      title: 'Save Time, Focus on What Matters',
-      description: 'Spend less time struggling with formatting and wording, and more time on your studies, projects, and skill development.'
-    },
-    {
-      icon: <Brain className="w-8 h-8 text-emerald-500" />,
-      title: 'Learn as You Create',
-      description: 'Our AI tools don\'t just generate content—they help you understand what makes effective career communication, improving your skills over time.'
-    }
-  ];
-
-  const successSteps = [
-    {
-      step: '1',
-      title: 'Choose Your Tool',
-      description: 'Select from our suite of specialized AI tools based on your current need—resume building, email writing, interview prep, or documentation.'
-    },
-    {
-      step: '2',
-      title: 'Provide Your Information',
-      description: 'Input your details, experiences, and preferences. Our AI understands context and tailors outputs to your unique situation.'
-    },
-    {
-      step: '3',
-      title: 'Get AI-Powered Results',
-      description: 'Receive professionally crafted content in seconds, optimized for your industry, role, and goals with built-in best practices.'
-    },
-    {
-      step: '4',
-      title: 'Refine and Succeed',
-      description: 'Review suggestions, make adjustments, and use the final output to advance your career. Track your progress over time.'
-    }
-  ];
-
-  return (
-    <div className="flex flex-col min-h-screen relative">
+  const tools = [{
+    icon: <Mail className="w-6 h-6" />,
+    name: 'AI Cold Email Generator',
+    description: 'Craft personalized, professional emails that get responses'
+  }, {
+    icon: <FileText className="w-6 h-6" />,
+    name: 'ATS-Friendly Resume Generator',
+    description: 'Create resumes optimized for Applicant Tracking Systems'
+  }, {
+    icon: <BookText className="w-6 h-6" />,
+    name: 'Project Documentation Generator',
+    description: 'Generate comprehensive project documentation from code'
+  }, {
+    icon: <FileCheck className="w-6 h-6" />,
+    name: 'ATS Resume Scorer',
+    description: 'Get instant feedback on your resume with ATS compatibility scoring'
+  }, {
+    icon: <MessageSquare className="w-6 h-6" />,
+    name: 'AI Interview Questions Generator',
+    description: 'Practice with role-specific interview questions'
+  }, {
+    icon: <Edit className="w-6 h-6" />,
+    name: 'SOP & Recommendation Letter Generator',
+    description: 'Craft compelling statements tailored to your goals'
+  }];
+  const howItHelps = [{
+    icon: <Trophy className="w-8 h-8 text-emerald-500" />,
+    title: 'Stand Out from the Crowd',
+    description: 'Create professional, polished career materials that showcase your unique strengths and make you memorable to recruiters and admissions officers.'
+  }, {
+    icon: <Target className="w-8 h-8 text-emerald-500" />,
+    title: 'Achieve Your Career Goals',
+    description: 'Whether you\'re applying for internships, jobs, or graduate programs, our tools help you present your best self and increase your chances of success.'
+  }, {
+    icon: <Rocket className="w-8 h-8 text-emerald-500" />,
+    title: 'Save Time, Focus on What Matters',
+    description: 'Spend less time struggling with formatting and wording, and more time on your studies, projects, and skill development.'
+  }, {
+    icon: <Brain className="w-8 h-8 text-emerald-500" />,
+    title: 'Learn as You Create',
+    description: 'Our AI tools don\'t just generate content—they help you understand what makes effective career communication, improving your skills over time.'
+  }];
+  const successSteps = [{
+    step: '1',
+    title: 'Choose Your Tool',
+    description: 'Select from our suite of specialized AI tools based on your current need—resume building, email writing, interview prep, or documentation.'
+  }, {
+    step: '2',
+    title: 'Provide Your Information',
+    description: 'Input your details, experiences, and preferences. Our AI understands context and tailors outputs to your unique situation.'
+  }, {
+    step: '3',
+    title: 'Get AI-Powered Results',
+    description: 'Receive professionally crafted content in seconds, optimized for your industry, role, and goals with built-in best practices.'
+  }, {
+    step: '4',
+    title: 'Refine and Succeed',
+    description: 'Review suggestions, make adjustments, and use the final output to advance your career. Track your progress over time.'
+  }];
+  return <div className="flex flex-col min-h-screen relative">
       <AnimatedBackground />
       <HoverGradientNavBar />
       <main className="flex-grow">
@@ -154,15 +117,13 @@ const About = () => {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Our <span className="text-gradient">AI-Powered Tools</span></h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {tools.map((tool, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl hover:border-emerald-500/30 transition-all duration-300">
+                {tools.map((tool, index) => <div key={index} className="glass-card p-6 rounded-xl hover:border-emerald-500/30 transition-all duration-300">
                     <div className="bg-emerald-500/10 p-3 rounded-lg w-max mb-4 text-emerald-400">
                       {tool.icon}
                     </div>
                     <h3 className="font-semibold mb-2">{tool.name}</h3>
                     <p className="text-white/70 text-sm">{tool.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -174,13 +135,11 @@ const About = () => {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">How StudyOrbit <span className="text-gradient">Helps You Succeed</span></h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {howItHelps.map((item, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl">
+                {howItHelps.map((item, index) => <div key={index} className="glass-card p-6 rounded-xl">
                     <div className="mb-4">{item.icon}</div>
                     <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                     <p className="text-white/70">{item.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -192,15 +151,13 @@ const About = () => {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Your Path to <span className="text-gradient">Success</span></h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {successSteps.map((item, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl text-center">
+                {successSteps.map((item, index) => <div key={index} className="glass-card p-6 rounded-xl text-center">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-2xl font-bold">
                       {item.step}
                     </div>
                     <h3 className="font-semibold mb-3">{item.title}</h3>
                     <p className="text-white/70 text-sm">{item.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -268,9 +225,7 @@ const About = () => {
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button variant="outline" size="lg" className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10">
-                      Contact Us
-                    </Button>
+                    
                   </Link>
                 </div>
               </div>
@@ -279,8 +234,6 @@ const About = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
