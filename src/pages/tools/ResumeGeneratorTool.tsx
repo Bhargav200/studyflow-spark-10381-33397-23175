@@ -50,11 +50,12 @@ const ResumeGeneratorTool = () => {
     },
   });
 
-  useEffect(() => {
-    if (!currentUser) {
-      navigate('/login');
-    }
-  }, [currentUser, navigate]);
+  // ⚠️ TEMPORARILY DISABLED FOR DEVELOPMENT - RE-ENABLE BEFORE GITHUB EXPORT ⚠️
+  // useEffect(() => {
+  //   if (!currentUser) {
+  //     navigate('/login');
+  //   }
+  // }, [currentUser, navigate]);
 
   const onSubmit = async (data: ResumeFormValues) => {
     setIsLoading(true);
