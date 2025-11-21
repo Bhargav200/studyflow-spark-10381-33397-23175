@@ -14,11 +14,6 @@ import {
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <BarChart3 className="w-8 h-8 text-emerald-500" />,
-      title: 'Performance Analytics',
-      description: 'Track the performance of your generated content with detailed analytics.'
-    },
-    {
       icon: <BookOpen className="w-8 h-8 text-emerald-500" />,
       title: 'Industry Templates',
       description: 'Access specialized templates tailored to different industries and roles.'
