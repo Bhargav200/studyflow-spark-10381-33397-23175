@@ -4,9 +4,24 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import Aurora from '@/components/Aurora';
+import Ribbons from '@/components/Ribbons';
 const Hero = () => {
   return <section className="min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-10 px-4 relative overflow-hidden">
       <Aurora colorStops={['#10b981', '#34d399', '#059669']} amplitude={1.5} blend={0.6} speed={0.8} className="opacity-50" />
+      <Ribbons 
+        colors={['#10b981', '#34d399', '#059669', '#6ee7b7']}
+        baseSpring={0.02}
+        baseFriction={0.92}
+        baseThickness={25}
+        offsetFactor={0.03}
+        maxAge={600}
+        pointCount={60}
+        speedMultiplier={0.4}
+        enableFade={true}
+        enableShaderEffect={true}
+        effectAmplitude={1.5}
+        className="opacity-60"
+      />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
