@@ -10,6 +10,7 @@ import {
   Zap, 
   Fingerprint
 } from 'lucide-react';
+import SpotlightCard from '@/components/ui/SpotlightCard';
 
 const FeaturesSection = () => {
   const features = [
@@ -64,16 +65,16 @@ const FeaturesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className="glass-card rounded-xl p-6 transition-all duration-300 hover:border-emerald-500/30"
+            <SpotlightCard 
+              key={index}
+              spotlightColor="rgba(16, 185, 129, 0.25)"
             >
-              <div className="bg-card p-3 rounded-lg w-max mb-4">
+              <div className="bg-emerald-500/10 p-3 rounded-lg w-max mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-white/70">{feature.description}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
