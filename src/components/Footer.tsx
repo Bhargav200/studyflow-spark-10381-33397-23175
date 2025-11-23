@@ -72,7 +72,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="StudyOrbit Logo" 
-                className="h-14 w-auto md:h-16 object-contain transition-all duration-300 hover:scale-105"
+                className="h-20 w-auto md:h-28 object-contain transition-all duration-300 hover:scale-105"
               />
             </Link>
             <p className="text-white/70 mb-6 max-w-md">
