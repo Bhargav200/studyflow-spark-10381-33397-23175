@@ -51,7 +51,7 @@ const App = () => (
               <img 
                 src={logo} 
                 alt="StudyOrbit Logo" 
-                className="h-12 w-auto md:h-16 lg:h-20 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+                className="h-16 w-auto md:h-20 lg:h-28 object-contain transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
                 loading="eager"
               />
             </Link>
