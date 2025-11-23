@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Heart } from 'lucide-react';
+import logo from "@/assets/logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = [{
@@ -68,7 +69,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <span className="text-2xl font-bold text-gradient">StudyOrbit</span>
+              <img 
+                src={logo} 
+                alt="StudyOrbit Logo" 
+                className="h-14 w-auto md:h-16 object-contain transition-all duration-300 hover:scale-105"
+              />
             </Link>
             <p className="text-white/70 mb-6 max-w-md">
               All your AI tools, in one intelligent orbit. Empowering students to enhance their academic and professional success.
