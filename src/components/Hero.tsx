@@ -8,20 +8,7 @@ import Ribbons from '@/components/Ribbons';
 const Hero = () => {
   return <section className="min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-10 px-4 relative overflow-hidden">
       <Aurora colorStops={['#10b981', '#34d399', '#059669']} amplitude={1.5} blend={0.6} speed={0.8} className="opacity-50" />
-      <Ribbons 
-        colors={['#10b981', '#34d399', '#059669', '#6ee7b7']}
-        baseSpring={0.02}
-        baseFriction={0.92}
-        baseThickness={25}
-        offsetFactor={0.03}
-        maxAge={600}
-        pointCount={60}
-        speedMultiplier={0.4}
-        enableFade={true}
-        enableShaderEffect={true}
-        effectAmplitude={1.5}
-        className="opacity-60"
-      />
+      <Ribbons colors={['#10b981', '#34d399', '#059669', '#6ee7b7']} baseSpring={0.02} baseFriction={0.92} baseThickness={25} offsetFactor={0.03} maxAge={600} pointCount={60} speedMultiplier={0.4} enableFade={true} enableShaderEffect={true} effectAmplitude={1.5} className="opacity-60" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -62,9 +49,7 @@ const Hero = () => {
           animationDelay: '0.8s'
         }}>
           <div className="flex -space-x-3 md:-space-x-4">
-            {[1, 2, 3, 4].map(i => (
-              <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 border-2 border-background" />
-            ))}
+            {[1, 2, 3, 4].map(i => {})}
           </div>
             <div className="sm:ml-4 text-xs md:text-sm text-white/70 text-center sm:text-left">
               <span className="font-semibold text-white">500+</span> students already using our tools
