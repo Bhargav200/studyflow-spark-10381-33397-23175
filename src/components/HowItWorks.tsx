@@ -11,8 +11,18 @@ import {
   MessageSquare,
   BookText,
   FileCheck,
-  Edit
+  Edit,
+  Clock,
+  GraduationCap,
+  Briefcase,
+  Award,
+  ArrowRight,
+  BookOpen,
+  PenTool,
+  Calendar,
+  Lightbulb
 } from 'lucide-react';
+import SpotlightCard from '@/components/ui/SpotlightCard';
 
 const HowItWorks = () => {
   const tools = [
@@ -48,192 +58,231 @@ const HowItWorks = () => {
     }
   ];
 
-  const howItHelps = [
+  const dailyBenefits = [
     {
-      icon: <Trophy className="w-8 h-8 text-emerald-500" />,
-      title: 'Stand Out from the Crowd',
-      description: 'Create professional, polished career materials that showcase your unique strengths and make you memorable to recruiters and admissions officers.'
+      icon: <Clock className="w-8 h-8 text-emerald-500" />,
+      title: 'Save 5+ Hours Weekly',
+      description: 'Transform tasks that took hours into minutes. Generate project documentation, emails, and reports in seconds.',
+      stat: '5+ hrs',
+      statLabel: 'Saved weekly'
     },
     {
-      icon: <Target className="w-8 h-8 text-emerald-500" />,
-      title: 'Achieve Your Career Goals',
-      description: 'Whether you\'re applying for internships, jobs, or graduate programs, our tools help you present your best self and increase your chances of success.'
+      icon: <Calendar className="w-8 h-8 text-emerald-500" />,
+      title: 'Never Miss Deadlines',
+      description: 'Quick AI assistance helps you complete assignments on time without compromising quality.',
+      stat: '100%',
+      statLabel: 'On-time submissions'
     },
     {
-      icon: <Rocket className="w-8 h-8 text-emerald-500" />,
-      title: 'Save Time, Focus on What Matters',
-      description: 'Spend less time struggling with formatting and wording, and more time on your studies, projects, and skill development.'
+      icon: <PenTool className="w-8 h-8 text-emerald-500" />,
+      title: 'Better Quality Work',
+      description: 'AI-powered suggestions improve your writing, formatting, and overall presentation.',
+      stat: '40%',
+      statLabel: 'Grade improvement'
     },
     {
-      icon: <Brain className="w-8 h-8 text-emerald-500" />,
-      title: 'Learn as You Create',
-      description: 'Our AI tools don\'t just generate content—they help you understand what makes effective career communication, improving your skills over time.'
+      icon: <Lightbulb className="w-8 h-8 text-emerald-500" />,
+      title: 'Learn While Creating',
+      description: 'Understand best practices in documentation, professional writing, and communication.',
+      stat: 'Lifetime',
+      statLabel: 'Skills gained'
+    }
+  ];
+
+  const studentUseCases = [
+    {
+      title: 'Daily Assignments',
+      icon: <BookOpen className="w-5 h-5 text-emerald-500" />,
+      items: ['Project documentation & reports', 'Lab report summaries', 'Research paper outlines', 'Case study analysis', 'Assignment formatting']
+    },
+    {
+      title: 'Career Preparation',
+      icon: <Briefcase className="w-5 h-5 text-emerald-500" />,
+      items: ['Professional resumes', 'Cover letters', 'LinkedIn profile optimization', 'Cold emails to recruiters', 'Interview preparation']
+    },
+    {
+      title: 'Academic Applications',
+      icon: <GraduationCap className="w-5 h-5 text-emerald-500" />,
+      items: ['Statement of Purpose', 'Recommendation letters', 'Scholarship essays', 'University applications', 'Personal statements']
     }
   ];
 
   const successSteps = [
     {
-      step: '1',
+      step: '01',
       title: 'Choose Your Tool',
-      description: 'Select from our suite of specialized AI tools based on your current need—resume building, email writing, interview prep, or documentation.'
+      description: 'Select from our suite of specialized AI tools based on your current need—assignments, career prep, or applications.'
     },
     {
-      step: '2',
-      title: 'Provide Your Information',
-      description: 'Input your details, experiences, and preferences. Our AI understands context and tailors outputs to your unique situation.'
+      step: '02',
+      title: 'Input Your Details',
+      description: 'Provide your information, requirements, and preferences. Our AI understands context instantly.'
     },
     {
-      step: '3',
-      title: 'Get AI-Powered Results',
-      description: 'Receive professionally crafted content in seconds, optimized for your industry, role, and goals with built-in best practices.'
+      step: '03',
+      title: 'AI Generation',
+      description: 'Receive professionally crafted content in seconds, optimized with industry best practices.'
     },
     {
-      step: '4',
-      title: 'Refine and Succeed',
-      description: 'Review suggestions, make adjustments, and use the final output to advance your career. Track your progress over time.'
+      step: '04',
+      title: 'Refine & Submit',
+      description: 'Review, customize, and export your polished documents ready for submission.'
     }
   ];
 
   return (
-    <section className="py-20 bg-secondary/30 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Main Heading */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold mb-8 tracking-wide">
-              <Sparkles size={20} className="mr-2" />
-              <span>HOW STUDYORBIT WORKS</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight">
-              Your AI-Powered Career <span className="text-gradient">Success Platform</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed font-light">
-              StudyOrbit is an all-in-one platform that empowers students with cutting-edge AI tools to accelerate their academic and professional journey. 
-              From crafting perfect resumes to preparing for interviews, we provide everything you need to stand out and succeed.
-            </p>
-          </div>
+    <section className="py-24 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/10 to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Main Heading */}
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+            <Sparkles size={18} className="mr-2" />
+            How StudyOrbit Works
+          </span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Your AI-Powered <span className="text-gradient">Study Companion</span>
+          </h2>
+          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            StudyOrbit simplifies your academic life by handling tedious documentation and preparation tasks, 
+            so you can focus on learning, growing, and achieving your dreams.
+          </p>
+        </div>
 
-          {/* What Is StudyOrbit Section */}
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center tracking-tight">
-              What is <span className="text-gradient">StudyOrbit</span>?
-            </h3>
-            <div className="glass-card p-10 md:p-12 rounded-2xl">
-              <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-6 font-light">
-                StudyOrbit is a comprehensive AI-powered platform designed specifically for students who want to excel in their career development. 
-                We understand the challenges students face—from creating standout resumes to preparing for competitive interviews and crafting compelling applications.
-              </p>
-              <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light">
-                Our mission is simple: <span className="font-semibold text-emerald-400">democratize access to professional-grade career tools</span> that were once only available through expensive career coaches and consultants. 
-                With StudyOrbit, every student can access world-class AI assistance to build their professional presence, regardless of their background or resources.
-              </p>
-            </div>
+        {/* Daily Benefits for Students */}
+        <div className="mb-24">
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-4">
+            How It Helps Your <span className="text-gradient">Daily Student Life</span>
+          </h3>
+          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+            From morning assignments to evening study sessions — we've got your back
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dailyBenefits.map((benefit, index) => (
+              <SpotlightCard key={index} spotlightColor="rgba(16, 185, 129, 0.25)">
+                <div className="bg-emerald-500/10 p-3 rounded-lg w-max mb-4">
+                  {benefit.icon}
+                </div>
+                <h4 className="text-lg font-semibold mb-2">{benefit.title}</h4>
+                <p className="text-white/60 text-sm mb-4">{benefit.description}</p>
+                <div className="pt-4 border-t border-white/10">
+                  <span className="text-2xl font-bold text-emerald-400">{benefit.stat}</span>
+                  <span className="text-white/50 text-sm ml-2">{benefit.statLabel}</span>
+                </div>
+              </SpotlightCard>
+            ))}
           </div>
+        </div>
 
-          {/* Available Tools Section */}
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
-              Our <span className="text-gradient">AI-Powered Tools</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {tools.map((tool, index) => (
-                <div key={index} className="glass-card p-8 rounded-2xl hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 group">
-                  <div className="bg-emerald-500/10 p-4 rounded-xl w-max mb-5 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
-                    {tool.icon}
+        {/* Simple Steps */}
+        <div className="mb-24">
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-12">
+            Simple <span className="text-gradient">4-Step Process</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {successSteps.map((step, index) => (
+              <div key={index} className="relative">
+                <SpotlightCard spotlightColor="rgba(16, 185, 129, 0.2)">
+                  <span className="text-5xl font-bold text-emerald-500/20 mb-2 block">{step.step}</span>
+                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                  <p className="text-white/60 text-sm">{step.description}</p>
+                </SpotlightCard>
+                {index < successSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="w-6 h-6 text-emerald-500/40" />
                   </div>
-                  <h4 className="font-bold text-lg mb-3">{tool.name}</h4>
-                  <p className="text-white/70 text-base leading-relaxed">{tool.description}</p>
-                </div>
-              ))}
-            </div>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* How It Helps Section */}
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
-              How StudyOrbit <span className="text-gradient">Helps You Succeed</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {howItHelps.map((item, index) => (
-                <div key={index} className="glass-card p-8 rounded-2xl hover:border-emerald-500/40 transition-all duration-300">
-                  <div className="mb-6">{item.icon}</div>
-                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
-                  <p className="text-white/80 text-base leading-relaxed">{item.description}</p>
+        {/* Use Cases Grid */}
+        <div className="mb-24">
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-4">
+            Perfect For <span className="text-gradient">Every Student Need</span>
+          </h3>
+          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+            Whether it's a quick assignment or a life-changing application
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {studentUseCases.map((useCase, index) => (
+              <SpotlightCard key={index} spotlightColor="rgba(16, 185, 129, 0.2)">
+                <div className="flex items-center gap-2 mb-4">
+                  {useCase.icon}
+                  <h4 className="text-lg font-semibold">{useCase.title}</h4>
                 </div>
-              ))}
-            </div>
+                <ul className="space-y-3">
+                  {useCase.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-center gap-2 text-white/70 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </SpotlightCard>
+            ))}
           </div>
+        </div>
 
-          {/* Steps to Success Section */}
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">
-              Your Path to <span className="text-gradient">Success</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {successSteps.map((item, index) => (
-                <div key={index} className="glass-card p-8 rounded-2xl text-center hover:border-emerald-500/40 transition-all duration-300">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-emerald-500/20">
-                    {item.step}
-                  </div>
-                  <h4 className="font-bold text-lg mb-4">{item.title}</h4>
-                  <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
+        {/* Available Tools */}
+        <div className="mb-24">
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-12">
+            Our <span className="text-gradient">AI-Powered Tools</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {tools.map((tool, index) => (
+              <SpotlightCard key={index} spotlightColor="rgba(16, 185, 129, 0.2)">
+                <div className="bg-emerald-500/10 p-3 rounded-xl w-max mb-4 text-emerald-400">
+                  {tool.icon}
                 </div>
-              ))}
-            </div>
+                <h4 className="font-semibold text-lg mb-2">{tool.name}</h4>
+                <p className="text-white/60 text-sm">{tool.description}</p>
+              </SpotlightCard>
+            ))}
           </div>
+        </div>
 
-          {/* Merit & Achievement Section */}
-          <div className="glass-card p-10 md:p-12 rounded-2xl bg-gradient-to-br from-emerald-900/20 to-background">
-            <div className="text-center mb-10">
-              <Trophy className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                Building Your <span className="text-gradient">Merit & Excellence</span>
+        {/* Achievement Section */}
+        <div className="mb-16">
+          <SpotlightCard className="max-w-4xl mx-auto" spotlightColor="rgba(16, 185, 129, 0.15)">
+            <div className="text-center py-6">
+              <Trophy className="w-14 h-14 mx-auto mb-6 text-emerald-400" />
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Building Your <span className="text-gradient">Academic Excellence</span>
               </h3>
-            </div>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-white/90 font-bold text-lg mb-2">Competitive Edge in Applications</p>
-                  <p className="text-white/70 text-base leading-relaxed">Stand out in scholarship applications, internship programs, and graduate school admissions with professionally crafted materials.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-white/90 font-bold text-lg mb-2">Higher Success Rates</p>
-                  <p className="text-white/70 text-base leading-relaxed">Our ATS-optimized resumes and tailored application materials significantly increase your chances of getting interviews and offers.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-white/90 font-bold text-lg mb-2">Confidence in Communication</p>
-                  <p className="text-white/70 text-base leading-relaxed">Master the art of professional communication through AI-guided email writing and interview preparation, building skills that last a lifetime.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-7 h-7 text-emerald-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-white/90 font-bold text-lg mb-2">Track Your Growth</p>
-                  <p className="text-white/70 text-base leading-relaxed">Monitor your progress, see improvements in your materials over time, and build a portfolio of accomplishments that demonstrate your merit.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Encouraging Message */}
-          <div className="mt-20 text-center">
-            <div className="inline-block glass-card p-10 md:p-12 rounded-2xl max-w-4xl">
-              <Rocket className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                Ready to <span className="text-gradient">Launch Your Career</span>?
-              </h3>
-              <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light">
-                Join over <span className="font-bold text-emerald-400">500+ students</span> who are already using StudyOrbit to transform their career prospects. 
-                Every great journey starts with a single step—take yours today and discover how our AI tools can help you achieve your dreams.
+              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+                Join thousands of students who are already saving time, improving grades, and preparing for successful careers.
               </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-emerald-400">500+</div>
+                  <div className="text-white/50 text-sm">Active Students</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-emerald-400">10K+</div>
+                  <div className="text-white/50 text-sm">Documents Generated</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-emerald-400">95%</div>
+                  <div className="text-white/50 text-sm">Satisfaction Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-emerald-400">3x</div>
+                  <div className="text-white/50 text-sm">More Interviews</div>
+                </div>
+              </div>
             </div>
+          </SpotlightCard>
+        </div>
+
+        {/* Free Badge */}
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+            <Sparkles className="w-5 h-5 text-emerald-400" />
+            <span className="text-white/80">100% Free for Students — No Credit Card Required</span>
           </div>
         </div>
       </div>

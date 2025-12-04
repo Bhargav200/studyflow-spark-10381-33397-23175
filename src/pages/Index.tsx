@@ -7,6 +7,7 @@ import { useOptimizedAnimation } from '../hooks/useOptimizedAnimation';
 
 // Lazy load heavy sections
 const ToolsSection = lazy(() => import('../components/ToolsSectionOptimized'));
+const HowItWorks = lazy(() => import('../components/HowItWorks'));
 const FeaturesSection = lazy(() => import('../components/FeaturesSection'));
 const TestimonialSection = lazy(() => import('../components/TestimonialSection'));
 const CTASection = lazy(() => import('../components/CTASection'));
@@ -33,6 +34,7 @@ const Index = () => {
         <Hero />
         <Suspense fallback={<div className="min-h-screen" />}>
           <ToolsSection />
+          <HowItWorks />
           <FeaturesSection />
           <TestimonialSection />
           <CTASection />
