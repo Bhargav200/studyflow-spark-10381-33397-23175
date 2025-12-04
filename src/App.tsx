@@ -29,6 +29,7 @@ const ProjectDocumentationTool = lazy(() => import("./pages/tools/ProjectDocumen
 const ResumeScorerTool = lazy(() => import("./pages/tools/ResumeScorerTool"));
 const InterviewQuestionsTool = lazy(() => import("./pages/tools/InterviewQuestionsTool"));
 const SOPLetterGeneratorTool = lazy(() => import("./pages/tools/SOPLetterGeneratorTool"));
+const HowItWorksPage = lazy(() => import("./pages/HowItWorksPage"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -64,6 +65,7 @@ const App = () => (
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="/how-it-works" element={<PageTransition><HowItWorksPage /></PageTransition>} />
             
             
               {/* Auth routes - accessible only when NOT authenticated */}
