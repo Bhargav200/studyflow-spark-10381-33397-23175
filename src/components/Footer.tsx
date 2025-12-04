@@ -69,11 +69,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <img 
-                src={logo} 
-                alt="StudyOrbit Logo" 
-                className="h-20 w-auto md:h-28 object-contain transition-all duration-300 hover:scale-105"
-              />
+              <img src={logo} alt="StudyOrbit Logo" className="h-20 w-auto md:h-28 object-contain transition-all duration-300 hover:scale-105" />
             </Link>
             <p className="text-white/70 mb-6 max-w-md">
               All your AI tools, in one intelligent orbit. Empowering students to enhance their academic and professional success.
@@ -85,16 +81,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {footerLinks.map((column, idx) => <div key={idx}>
-              <h3 className="font-semibold text-white mb-4">{column.title}</h3>
-              <ul className="space-y-3">
-                {column.links.map((link, linkIdx) => <li key={linkIdx}>
-                    <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200">
-                      {link.label}
-                    </Link>
-                  </li>)}
-              </ul>
-            </div>)}
+          {footerLinks.map((column, idx) => {})}
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
