@@ -10,26 +10,8 @@ const Footer = () => {
       label: 'AI Tools',
       href: '/tools'
     }, {
-      label: 'Student Discounts',
-      href: '/student-verification'
-    }, {
       label: 'Testimonials',
       href: '/testimonials'
-    }]
-  }, {
-    title: 'Resources',
-    links: [{
-      label: 'Blog',
-      href: '/blog'
-    }, {
-      label: 'Help Center',
-      href: '/help'
-    }, {
-      label: 'API Documentation',
-      href: '/api-docs'
-    }, {
-      label: 'Status',
-      href: '/status'
     }]
   }, {
     title: 'Company',
@@ -37,14 +19,8 @@ const Footer = () => {
       label: 'About Us',
       href: '/about'
     }, {
-      label: 'Careers',
-      href: '/careers'
-    }, {
       label: 'Contact',
       href: '/contact'
-    }, {
-      label: 'Privacy Policy',
-      href: '/privacy'
     }]
   }];
   const socialLinks = [{
@@ -103,13 +79,6 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <Link to="/terms" className="text-white/50 hover:text-white text-sm transition-colors duration-200">
-              Terms of Service
-            </Link>
-            <Link to="/privacy" className="text-white/50 hover:text-white text-sm transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            
           </div>
         </div>
         
