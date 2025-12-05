@@ -81,7 +81,20 @@ const Footer = () => {
             </div>
           </div>
           
-          {footerLinks.map((column, idx) => {})}
+          {footerLinks.map((column, idx) => (
+            <div key={idx}>
+              <h4 className="font-semibold text-white mb-4">{column.title}</h4>
+              <ul className="space-y-2">
+                {column.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link to={link.href} className="text-white/60 hover:text-white transition-colors duration-200 text-sm">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
